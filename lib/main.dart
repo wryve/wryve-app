@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'screens/home.dart';
+import 'package:window_manager/window_manager.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await windowManager.ensureInitialized();
+
+  windowManager.setTitle('Wryve Messenger');
+
   runApp(App());
 }
 
